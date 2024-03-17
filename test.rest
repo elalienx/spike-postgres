@@ -9,6 +9,6 @@ POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Principal Frontend Developer",
-    "company_name": "Zalando"
+    "assigment_name": "UI Designer",
+    "company_name": "Amazon"
 }

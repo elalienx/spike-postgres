@@ -8,10 +8,8 @@ A learning environment to test node with a database
 
 ## Todo
 
-- Change ports
-- Build inside docker compose
-- Refactor `index.js` endpoints
 - Add volumnes (and connect Postico on local)
+- Refactor `index.js` endpoints
 - Do queries on `test.rest` to get _canddiates_ by _assigment_id_
 
 ## Rare bug 🐞
