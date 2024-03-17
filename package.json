@@ -2,10 +2,10 @@
   "name": "spike_node_postgresql",
   "version": "1.0.0",
   "description": "A learning environment to test node with a database",
-  "main": "index.js",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node ."
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
