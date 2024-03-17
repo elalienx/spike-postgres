@@ -18,9 +18,9 @@ app.get("/", async (request, response) => {
 
   try {
     data = await pool.query(query);
-    response.sendStatus(200).send(data.rows);
+    response.status(200).send(data.rows);
   } catch (error) {
-    console.error(error);
+    console.log(error);
     response.sendStatus(500);
   }
 });
@@ -33,9 +33,9 @@ app.post("/", async (request, response) => {
 
   try {
     await pool.query(query, [assigment_name, company_name]);
-    response.sendStatus(200).send({ message: message });
+    response.status(200).send({ message: message });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     response.sendStatus(500);
   }
 });
@@ -47,9 +47,9 @@ app.get("/setup", async (request, response) => {
 
   try {
     await pool.query(query);
-    response.sendStatus(200).send({ message: message });
+    response.status(200).send({ message: message });
   } catch (error) {
-    console.error(error);
+    console.log(error);
     response.sendStatus(500);
   }
 });
