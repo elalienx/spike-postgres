@@ -1,4 +1,4 @@
-### Create assigments table
+### Create assigments table (🚨 refactor error message if table already exist)
 GET http://localhost:8000/setup
 
 ### Get all assigments
@@ -21,3 +21,4 @@ Content-Type: application/json
     "assigment_name": "Senior Frontend Developer",
     "company_name": "Zalando"
 }
+
