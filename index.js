@@ -12,9 +12,10 @@ const app = express();
 app.use(express.json());
 
 // Routes
+// -- Setup table
 app.get("/setup", async (request, response) => {
   const query =
-    "CREATE TABLE assigments (id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
+    "CREATE TABLE IF NOT EXISTS assigments (id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
   const message = "Postgres initialized table assigments";
 
   try {
@@ -26,6 +27,7 @@ app.get("/setup", async (request, response) => {
   }
 });
 
+// -- Get assigments
 app.get("/", async (request, response) => {
   const query = "SELECT * FROM assigments";
   let data = {};
@@ -39,6 +41,7 @@ app.get("/", async (request, response) => {
   }
 });
 
+// -- Post new assigment
 app.post("/", async (request, response) => {
   const { assigment_name, company_name } = request.body;
   const query =
