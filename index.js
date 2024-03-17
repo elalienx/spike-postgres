@@ -5,7 +5,7 @@ import express, { response } from "express";
 import client from "./database.js";
 
 // Properties
-const port = 1337;
+const port = 8000;
 const app = express();
 
 // Setup
@@ -14,7 +14,7 @@ app.use(express.json());
 // Routes
 app.get("/", async (request, response) => {
   const query = "SELECT * FROM assigments2";
-  let data = "";
+  let data = {};
 
   try {
     data = await client.query(query);

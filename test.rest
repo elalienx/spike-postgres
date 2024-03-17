@@ -1,8 +1,11 @@
 ### Check you can connec to server
-GET http://localhost:1337
+GET http://localhost:8000 
+
+### Intialize database
+GET http://localhost:8000/setup
 
 ### Send a new assigment
-POST http://localhost:1337/
+POST http://localhost:8000/
 Content-Type: application/json
 
 {
