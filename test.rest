@@ -1,19 +1,14 @@
-### Check you can connec to server
-GET http://localhost:13000/
+###
+GET http://localhost:13001/setup
 
-### Intialize database
-GET http://localhost:13000/setup
+###
+GET http://localhost:13001
 
-### Get all assigments
-GET http://localhost:13000/assigments
-
-
-### Send a new assigment
-POST http://localhost:13000/
+###
+POST http://localhost:13001/
 Content-Type: application/json
 
 {
     "assigment_name": "Data Engineer",
     "company_name": "Folksam"
 }
-
