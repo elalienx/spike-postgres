@@ -12,7 +12,9 @@ const app = express();
 app.use(express.json());
 
 // Routes
-app.get("/", async (request, response) => {
+app.get("/", async (request, response) => response.sendStatus(200));
+
+app.get("/assigments", async (request, response) => {
   const query = "SELECT * FROM assigments2";
   let data = {};
 

@@ -1,5 +1,8 @@
 ### Check you can connec to server
-GET http://localhost:8000 
+GET http://localhost:8000/
+
+### Get all assigments
+GET http://localhost:8000/assigments
 
 ### Intialize database
 GET http://localhost:8000/setup
@@ -12,3 +15,4 @@ Content-Type: application/json
     "assigment_name": "Data Engineer",
     "company_name": "Folksam"
 }
+
