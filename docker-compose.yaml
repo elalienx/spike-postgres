@@ -6,6 +6,8 @@ services:
       POSTGRES_DB: database123
       POSTGRES_USER: user123
       POSTGRES_PASSWORD: password123
+    volumes:
+      - /Users/eduardo/database/spike_node_postgresql:/var/lib/postgresql/data
   server:
     build:
       context: .

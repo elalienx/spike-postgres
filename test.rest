@@ -1,14 +1,23 @@
-###
+### Create assigments table
 GET http://localhost:8000/setup
 
-###
+### Get all assigments
 GET http://localhost:8000
 
-###
+### Add new role Data Enginer
 POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "UI Designer",
-    "company_name": "Amazon"
+    "assigment_name": "Data Engineer",
+    "company_name": "Folksam"
+}
+
+### Add new role Senior Frontend
+POST http://localhost:8000/
+Content-Type: application/json
+
+{
+    "assigment_name": "Senior Frontend Developer",
+    "company_name": "Zalando"
 }
