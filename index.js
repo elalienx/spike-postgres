@@ -5,7 +5,7 @@ import express from "express";
 import pool from "./database.js";
 
 // Properties
-const port = 3000;
+const port = 8000;
 const app = express();
 
 // Setup

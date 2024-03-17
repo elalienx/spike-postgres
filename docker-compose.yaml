@@ -9,4 +9,4 @@ services:
   server:
     image: node-express
     ports:
-      - 13000:3000
+      - 8000:8000

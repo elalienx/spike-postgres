@@ -1,14 +1,14 @@
 ###
-GET http://localhost:13000/setup
+GET http://localhost:8000/setup
 
 ###
-GET http://localhost:13000
+GET http://localhost:8000
 
 ###
-POST http://localhost:13000/
+POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Senior Frontend Developer",
+    "assigment_name": "Principal Frontend Developer",
     "company_name": "Zalando"
-} 
+}
