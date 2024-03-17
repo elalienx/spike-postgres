@@ -1,4 +1,7 @@
-export default async function postAssigment(request, response, pool) {
+// Project files
+import pool from "../database.js";
+
+export default async function postAssigment(request, response) {
   const { assigment_name, company_name } = request.body;
   const query =
     "INSERT INTO assigments (assigment_name, company_name) VALUES ($1, $2)";

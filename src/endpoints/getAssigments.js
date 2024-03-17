@@ -1,4 +1,7 @@
-export default async function getAssigments(request, response, pool) {
+// Project files
+import pool from "../database.js";
+
+export default async function getAssigments(request, response) {
   const query = "SELECT * FROM assigments";
   let data = {};
 
