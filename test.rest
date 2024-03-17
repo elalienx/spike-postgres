@@ -1,2 +1,11 @@
-###
+### Check you can connec to server
 GET http://localhost:1337
+
+### Send a new assigment
+POST http://localhost:1337/
+Content-Type: application/json
+
+{
+    "assigment_name": "Data Engineer",
+    "company_name": "Folksam"
+}
