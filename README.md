@@ -9,7 +9,6 @@ A learning environment to test node with a database
 ## Todo
 
 - Add validation if table assigment already exist
-- Refactor `index.js` endpoints
 - Do queries on `test.rest` to get _canddiates_ by _assigment_id_
 
 ## Rare bug 🐞
