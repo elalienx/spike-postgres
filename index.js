@@ -2,7 +2,7 @@
 import express from "express";
 
 // Project files
-import client from "./database.js";
+import pool from "./database.js";
 
 // Properties
 const port = 3000;
@@ -17,7 +17,7 @@ app.get("/", async (request, response) => {
   let data = {};
 
   try {
-    data = await client.query(query);
+    data = await pool.query(query);
     response.sendStatus(200).send(data.rows);
   } catch (error) {
     console.error(error);
@@ -32,7 +32,7 @@ app.post("/", async (request, response) => {
   const message = "Postgres added new assigment";
 
   try {
-    await client.query(query, [assigment_name, company_name]);
+    await pool.query(query, [assigment_name, company_name]);
     response.sendStatus(200).send({ message: message });
   } catch (error) {
     console.error(error);
@@ -46,7 +46,7 @@ app.get("/setup", async (request, response) => {
   const message = "Postgres initialized table assigments";
 
   try {
-    await client.query(query);
+    await pool.query(query);
     response.sendStatus(200).send({ message: message });
   } catch (error) {
     console.error(error);
