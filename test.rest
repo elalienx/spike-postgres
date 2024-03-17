@@ -9,6 +9,6 @@ POST http://localhost:13000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Master Data Specialist",
+    "assigment_name": "Power BI Developer",
     "company_name": "McDonalds"
-} 
+}   
