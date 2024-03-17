@@ -1,14 +1,15 @@
 ### Check you can connec to server
-GET http://localhost:8000/
-
-### Get all assigments
-GET http://localhost:8000/assigments
+GET http://localhost:13000/
 
 ### Intialize database
-GET http://localhost:8000/setup
+GET http://localhost:13000/setup
+
+### Get all assigments
+GET http://localhost:13000/assigments
+
 
 ### Send a new assigment
-POST http://localhost:8000/
+POST http://localhost:13000/
 Content-Type: application/json
 
 {

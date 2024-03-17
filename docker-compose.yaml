@@ -1,7 +1,7 @@
 version: "3"
 services:
   postgres:
-    image: "postgres"
+    image: postgres
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
@@ -9,4 +9,4 @@ services:
   server:
     image: node-express
     ports:
-      - 8000:8000
+      - 13001:3000

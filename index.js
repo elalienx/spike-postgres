@@ -1,21 +1,19 @@
 // Node modules
-import express, { response } from "express";
+import express from "express";
 
 // Project files
 import client from "./database.js";
 
 // Properties
-const port = 8000;
+const port = 3000;
 const app = express();
 
 // Setup
 app.use(express.json());
 
 // Routes
-app.get("/", async (request, response) => response.sendStatus(200));
-
-app.get("/assigments", async (request, response) => {
-  const query = "SELECT * FROM assigments2";
+app.get("/", async (request, response) => {
+  const query = "SELECT * FROM assigments";
   let data = {};
 
   try {
@@ -27,13 +25,14 @@ app.get("/assigments", async (request, response) => {
   }
 });
 
-app.get("/setup", async (request, response) => {
+app.post("/", async (request, response) => {
+  const { assigment_name, company_name } = request.body;
   const query =
-    "CREATE TABLE assigments2(id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
-  const message = "Postgres initialized table assigments2";
+    "INSERT INTO assigments (assigment_name, company_name) VALUES ($1, $2)";
+  const message = "Postgres added new assigment";
 
   try {
-    await client.query(query);
+    await client.query(query, [assigment_name, company_name]);
     response.sendStatus(200).send({ message: message });
   } catch (error) {
     console.error(error);
@@ -41,14 +40,13 @@ app.get("/setup", async (request, response) => {
   }
 });
 
-app.post("/", async (request, response) => {
-  const { assigment_name, company_name } = request.body;
+app.get("/setup", async (request, response) => {
   const query =
-    "INSERT INTO assigments2 (assigment_name, company_name) VALUES ($1, $2)";
-  const message = "Postgres added new assigment";
+    "CREATE TABLE assigments (id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
+  const message = "Postgres initialized table assigments";
 
   try {
-    await client.query(query, [assigment_name, company_name]);
+    await client.query(query);
     response.sendStatus(200).send({ message: message });
   } catch (error) {
     console.error(error);
