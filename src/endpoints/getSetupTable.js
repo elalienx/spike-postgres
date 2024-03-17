@@ -14,9 +14,9 @@ export default async function getSetupTable(response) {
 
   try {
     await pool.query(query);
-    response.status(200).send({ message: message });
+    response.status(200).send({ message });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     response.sendStatus(500);
   }
 }
