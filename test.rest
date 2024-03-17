@@ -1,5 +1,5 @@
 ### Create assigments table (🚨 refactor error message if table already exist)
-GET http://localhost:8000/setup
+GET http://localhost:8000/setup-table
 
 ### Get all assigments
 GET http://localhost:8000
@@ -9,8 +9,8 @@ POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Data Engineer",
-    "company_name": "Folksam"
+    "assigment_name": "Product Owner",
+    "company_name": "GigAssembly"
 }
 
 ### Add new role Senior Frontend

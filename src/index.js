@@ -3,6 +3,9 @@ import express from "express";
 
 // Project files
 import pool from "./database.js";
+import getSetupTable from "./endpoints/getSetupTable.js";
+import getAssigments from "./endpoints/getAssigments.js";
+import postAssigment from "./endpoints/postAssigment.js";
 
 // Properties
 const port = 8000;
@@ -12,50 +15,9 @@ const app = express();
 app.use(express.json());
 
 // Routes
-// -- Setup table
-app.get("/setup", async (request, response) => {
-  const query =
-    "CREATE TABLE IF NOT EXISTS assigments (id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
-  const message = "Postgres initialized table assigments";
+app.get("/setup-table", async (req, res) => getSetupTable(req, res, pool));
+app.get("/", async (req, res) => getAssigments(req, res, pool));
+app.post("/", async (req, res) => postAssigment(req, res, pool));
 
-  try {
-    await pool.query(query);
-    response.status(200).send({ message: message });
-  } catch (error) {
-    console.log(error);
-    response.sendStatus(500);
-  }
-});
-
-// -- Get assigments
-app.get("/", async (request, response) => {
-  const query = "SELECT * FROM assigments";
-  let data = {};
-
-  try {
-    data = await pool.query(query);
-    response.status(200).send(data.rows);
-  } catch (error) {
-    console.log(error);
-    response.sendStatus(500);
-  }
-});
-
-// -- Post new assigment
-app.post("/", async (request, response) => {
-  const { assigment_name, company_name } = request.body;
-  const query =
-    "INSERT INTO assigments (assigment_name, company_name) VALUES ($1, $2)";
-  const message = "Postgres added new assigment";
-
-  try {
-    await pool.query(query, [assigment_name, company_name]);
-    response.status(200).send({ message: message });
-  } catch (error) {
-    console.log(error);
-    response.sendStatus(500);
-  }
-});
-
-// Start server
+// Start server (check if i can put it before routes)
 app.listen(port, () => console.log(`Server started on ${port}`));
