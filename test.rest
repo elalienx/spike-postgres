@@ -9,6 +9,6 @@ POST http://localhost:13000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Senior BI Developer",
-    "company_name": "PwC"
-}
+    "assigment_name": "Senior Frontend Developer",
+    "company_name": "Zalando"
+} 
