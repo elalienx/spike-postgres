@@ -10,6 +10,10 @@ A learning environment to test node with a database
 
 The `host: "myName",` inside `database.js` **must** match the service name `services: myName:` on `docker-compose.yaml`
 
+## Glitch
+
+Make sure to destroy the images before making a new one, otherwise the databases will glitch like crazy!
+
 ## Express sentStatus() vs status()
 
 - `sentStatus(status_code)` sends the `status_code` to the client inmediatelly.
