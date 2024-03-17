@@ -4,7 +4,7 @@ import pkg from "pg";
 // Properties
 const { Pool } = pkg;
 const pool = new Pool({
-  host: "db",
+  host: "postgres",
   port: 5432,
   user: "user123",
   password: "password123",
