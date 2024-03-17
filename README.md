@@ -6,11 +6,6 @@ A learning environment to test node with a database
 
 [Build a CRUD API with Docker Node.JS Express.JS & PostgreSQL](https://www.youtube.com/watch?v=sDPw2Yp4JwE)
 
-## Todo
-
-- Add validation if table assigment already exist
-- Do queries on `test.rest` to get _canddiates_ by _assigment_id_
-
 ## Rare bug 🐞
 
 The `host: "myName",` inside `database.js` **must** match the service name `services: myName:` on `docker-compose.yaml`
