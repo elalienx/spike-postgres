@@ -9,8 +9,9 @@ POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Product Owner",
-    "company_name": "GigAssembly"
+    "assignment_name": "Product Owner",
+    "company_name": "GigAssembly",
+    "company_image_url": ""
 }
 
 ### Add new role Senior Frontend
@@ -18,10 +19,10 @@ POST http://localhost:8000/
 Content-Type: application/json
 
 {
-    "assigment_name": "Senior Frontend Developer II",
-    "company_name": "Zalando"
+    "assignment_name": "Senior Frontend Developer II",
+    "company_name": "Zalando",
+    "company_image_url": ""
 }
-
 
 
 
