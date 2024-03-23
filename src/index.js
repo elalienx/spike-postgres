@@ -1,5 +1,5 @@
 // Node modules
-import express from "express";
+import express, { request, response } from "express";
 
 // Project files
 import getSetupTable from "./endpoints/getSetupTable.js";
@@ -16,8 +16,12 @@ app.listen(port, () => console.log(`Server started on port ${port}`));
 
 // Routes
 // -- assigmnents
-app.get("/", async (request, response) => getAssignments(response));
-app.post("/", async (request, response) => postAssignment(request, response));
+app.get("/assignments", async (request, response) => getAssignments(response));
+app.post("/assignments", async (request, response) => postAssignment(request, response));
+
+// -- candidates
+app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(response));
+app.post("/candidates", (request, response) => postCandidate(request, response));
 
 // -- admin
 app.get("/setup-table", async (request, response) => getSetupTable(response));

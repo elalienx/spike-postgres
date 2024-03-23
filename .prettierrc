@@ -1,0 +1,11 @@
+{
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": "src/index.js",
+      "options": {
+        "printWidth": 200
+      }
+    }
+  ]
+}
