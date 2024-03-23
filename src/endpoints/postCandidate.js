@@ -4,6 +4,9 @@
  * The real project uses parse linked in links to add canddiates.
  */
 
+// Project files
+import pool from "../database.js";
+
 export default async function postCandidate(request, response) {
   const data = [
     request.body.assignment_id,
@@ -19,7 +22,7 @@ export default async function postCandidate(request, response) {
     request.body.contact_status,
     request.body.contact_date,
   ];
-  const query = `INSERT INTO assignments (
+  const query = `INSERT INTO candidates (
         assignment_id,
         linked_in_url,
         candidate_name,
@@ -33,7 +36,7 @@ export default async function postCandidate(request, response) {
         contact_status,
         contact_date
     )
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12,)`;
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`;
   const message = "Postgres added new debug candidate";
 
   try {
