@@ -26,4 +26,4 @@ app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssi
 app.post("/candidates", (request, response) => postCandidate(request, response));
 
 // -- admin
-app.get("/setup-table", async (request, response) => getSetupTables(response));
+app.get("/setup-tables", async (request, response) => getSetupTables(response));

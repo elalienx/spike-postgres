@@ -1,8 +1,8 @@
 // Project files
 import pool from "../database.js";
 
-export default async function getCandidatesByAssigmentId(response) {
-  const { assignment_id } = request.body;
+export default async function getCandidatesByAssigmentId(request, response) {
+  const { assignment_id } = request.params;
   const query = `SELECT * FROM candidates WHERE assignment_id ${assignment_id}`;
 
   try {
