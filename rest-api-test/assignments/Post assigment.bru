@@ -1,0 +1,19 @@
+meta {
+  name: Post assigment
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{base_url}}/assignments
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "assigment_name": "Information Architect",
+    "company_name": "PwC",
+    "company_image_url": "https://media.licdn.com/dms/image/D4D0BAQH3qXh7nyImoQ/company-logo_200_200/0/1697100791441/pwc_logo?e=1719446400&v=beta&t=CFeQASB9QsrVao6cI5vsbK35gPnmMbXZBRqxfpQvm0w"
+  }
+}
