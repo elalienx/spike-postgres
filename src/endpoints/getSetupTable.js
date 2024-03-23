@@ -10,8 +10,8 @@ import pool from "../database.js";
 export default async function getSetupTable(response) {
   const query = `CREATE TABLE IF NOT EXISTS assignments (
     id SERIAL PRIMARY KEY, 
-    date_created DATE DEFAULT CURRENT_DATE
-    assigment_name VARCHAR(50), 
+    date_created DATE DEFAULT CURRENT_DATE,
+    assignment_name VARCHAR(50), 
     company_name VARCHAR(50), 
     company_image_url VARCHAR(255)
   )`;

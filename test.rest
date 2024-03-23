@@ -1,7 +1,7 @@
-### Create assigments table (🚨 refactor error message if table already exist)
+### Create assignments table (🚨 refactor error message if table already exist)
 GET http://localhost:8000/setup-table
 
-### Get all assigments
+### Get all assignments
 GET http://localhost:8000
 
 ### Add new role Data Enginer
@@ -21,6 +21,7 @@ Content-Type: application/json
     "assigment_name": "Senior Frontend Developer II",
     "company_name": "Zalando"
 }
+
 
 
 
