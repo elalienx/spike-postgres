@@ -15,9 +15,9 @@ export default async function getSetupTable(response) {
     company_name VARCHAR(50),
     company_image_url VARCHAR(255)
   )`;
-  const queryCandidates = `CREATE TABLE IF NOT EXIST candidates(
+  const queryCandidates = `CREATE TABLE IF NOT EXISTS candidates(
     id SERIAL PRIMARY KEY,
-    assignment_id INT,
+    assignment_id INTEGER REFERENCES assignments(id),
     date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     linked_in_url VARCHAR(100),
     candidate_name VARCHAR(50),
