@@ -1,5 +1,5 @@
 {
-  "name": "spike_node_postgresql",
+  "name": "spike-postgres",
   "version": "1.0.0",
   "description": "A learning environment to test node with a database",
   "main": "src/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elalienx/spike_node_postgresql.git"
+    "url": "git+https://github.com/elalienx/spike-postgres.git"
   },
   "author": "Eduardo Alvarez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/elalienx/spike_node_postgresql/issues"
+    "url": "https://github.com/elalienx/spike-postgres/issues"
   },
-  "homepage": "https://github.com/elalienx/spike_node_postgresql#readme",
+  "homepage": "https://github.com/elalienx/spike-postgres#readme",
   "dependencies": {
     "express": "^4.18.3",
     "pg": "^8.11.3"
