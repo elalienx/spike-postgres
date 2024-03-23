@@ -22,7 +22,7 @@ app.get("/assignments", async (request, response) => getAssignments(response));
 app.post("/assignments", async (request, response) => postAssignment(request, response));
 
 // -- candidates
-app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(response));
+app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response));
 app.post("/candidates", (request, response) => postCandidate(request, response));
 
 // -- admin

@@ -2,7 +2,7 @@
 ### Create all tables 
 GET http://localhost:8000/setup-tables
 
-# ASSIGNMENTS  
+# ASSIGNMENTS   
 ### Get all assignments
 GET http://localhost:8000/assignments
 
