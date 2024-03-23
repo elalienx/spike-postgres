@@ -1,13 +1,13 @@
 version: "3"
 services:
-  postgres:
+  database:
     image: postgres
     environment:
       POSTGRES_DB: database123
       POSTGRES_USER: user123
       POSTGRES_PASSWORD: password123
     volumes:
-      - /Users/eduardo/database/spike_node_postgresql:/var/lib/postgresql/data
+      - /Users/eduardo/database/spike-postgres:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   server:
