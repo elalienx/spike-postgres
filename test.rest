@@ -1,6 +1,6 @@
 ### Create assignments table (🚨 refactor error message if table already exist)
 GET http://localhost:8000/setup-table
-  
+    
 ### Get all assignments
 GET http://localhost:8000
 
@@ -25,6 +25,6 @@ Content-Type: application/json
 }
 
 
-
+ 
 
 
