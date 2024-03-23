@@ -1,9 +1,3 @@
-/**
- * About:
- * This is a debug endpoint.
- * The real project uses parse linked in links to add canddiates.
- */
-
 // Project files
 import pool from "../database.js";
 
