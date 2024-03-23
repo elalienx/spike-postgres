@@ -12,5 +12,5 @@ export const candidates = `CREATE TABLE IF NOT EXISTS candidates(
     notes TEXT,
     relevance SMALLINT,
     contact_status SMALLINT,
-    contact_date TIMESTAMP
+    contact_date TIMESTAMP NULL
 )`;

@@ -1,11 +1,13 @@
-### Create assignments table (🚨 refactor error message if table already exist)
-GET http://localhost:8000/setup-table
-          
-### Get all assignments
-GET http://localhost:8000
+# ADMIN
+### Create all tables
+GET http://localhost:8000/setup-tables
 
-### Add new role Data Enginer
-POST http://localhost:8000/
+# ASSIGNMENTS  
+### Get all assignments
+GET http://localhost:8000/assignments
+
+### Add new assignment Example A
+POST http://localhost:8000/assignments
 Content-Type: application/json
 
 {
@@ -14,8 +16,8 @@ Content-Type: application/json
     "company_image_url": ""
 }
 
-### Add new role Senior Frontend
-POST http://localhost:8000/
+### Add new assignment Example B
+POST http://localhost:8000/assignments
 Content-Type: application/json
 
 {
@@ -24,7 +26,25 @@ Content-Type: application/json
     "company_image_url": ""
 }
 
+# CANDIDATES
+### Get all candidates from assignment id
+GET http://localhost:8000/candidates/1
 
- 
+### Add new candidate Example A
+POST http://localhost:8000/candidates
+Content-Type: application/json
 
-
+  {
+    "assignment_id": 1,
+    "linked_in_url": "https://www.linkedin.com/in/arianjavdan/",
+    "candidate_name": "Arian Javdan",
+    "candidate_job_title": "Data Engineer",
+    "candidate_image_url": "https://media.licdn.com/dms/image/D4D03AQGmLhBIEPbddw/profile-displayphoto-shrink_800_800/0/1696516150220?e=1715817600&v=beta&t=b_UQJhoulWjmu1nxqfSTxjy_Xa0C2jQnqWp7QplbAX8",
+    "company_name": "Sveriges riksbank",
+    "company_duration_in_months": "1Y 5M",
+    "company_image_url": "https://media.licdn.com/dms/image/C560BAQGKTrPVBNotbA/company-logo_100_100/0/1631305957530?e=1718236800&v=beta&t=wKZMj4vchmY7je4Rtk_HUXOuVytjLxE0_AFna6Q14zY",
+    "notes": "Just transitioned to data engineering, before that was a sofware developer (which makes sense) but is too junior",
+    "relevance": 0,
+    "contact_status": 0,
+    "contact_date": null
+  },

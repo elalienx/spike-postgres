@@ -2,9 +2,11 @@
 import express, { request, response } from "express";
 
 // Project files
-import getSetupTable from "./endpoints/getSetupTable.js";
 import getAssignments from "./endpoints/getAssignments.js";
+import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.js";
+import getSetupTables from "./endpoints/getSetupTables.js";
 import postAssignment from "./endpoints/postAssignment.js";
+import postCandidate from "./endpoints/postCandidate.js";
 
 // Properties
 const port = 8000;
@@ -24,4 +26,4 @@ app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssi
 app.post("/candidates", (request, response) => postCandidate(request, response));
 
 // -- admin
-app.get("/setup-table", async (request, response) => getSetupTable(response));
+app.get("/setup-table", async (request, response) => getSetupTables(response));
