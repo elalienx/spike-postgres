@@ -15,6 +15,9 @@ app.use(express.json());
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
 // Routes
-app.get("/setup-table", async (request, response) => getSetupTable(response));
+// -- assigmnents
 app.get("/", async (request, response) => getAssignments(response));
 app.post("/", async (request, response) => postAssignment(request, response));
+
+// -- admin
+app.get("/setup-table", async (request, response) => getSetupTable(response));

@@ -8,8 +8,13 @@ import pool from "../database.js";
  * - decide if we want to use a ORM like sequalizer for the schemas (maybe not because I only have 3 tables)
  */
 export default async function getSetupTable(response) {
-  const query =
-    "CREATE TABLE IF NOT EXISTS assigments (id SERIAL PRIMARY KEY, assigment_name VARCHAR(100), company_name VARCHAR(100))";
+  const query = `CREATE TABLE IF NOT EXISTS assignments (
+    id SERIAL PRIMARY KEY, 
+    date_created DATE DEFAULT CURRENT_DATE
+    assigment_name VARCHAR(50), 
+    company_name VARCHAR(50), 
+    company_image_url VARCHAR(255)
+  )`;
   const message = "Postgres initialized table assigments";
 
   try {
