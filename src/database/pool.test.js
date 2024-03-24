@@ -5,6 +5,9 @@ import { expect, test } from "vitest";
 import credentials from "./credentials";
 import pool from "./pool";
 
+/**
+ * To make this work, the entire scrip inside pool.js must be wrapped in a function called pool()
+ */
 test("Displays error message when the PostgressServer is down", async () => {
   // Arrange
   const result = `ENOTFOUND`;

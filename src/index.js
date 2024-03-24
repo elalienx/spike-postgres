@@ -7,10 +7,14 @@ import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.
 import getSetupTables from "./endpoints/getSetupTables.js";
 import postAssignment from "./endpoints/postAssignment.js";
 import postCandidate from "./endpoints/postCandidate.js";
+import pool from "./database/pool.js";
+import credentials from "./database/credentials.js";
 
 // Properties
 const port = 8000;
+const data = await pool(credentials);
 const app = express();
+console.log(data);
 
 // Start server
 app.use(express.json());
@@ -26,4 +30,4 @@ app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssi
 app.post("/candidates", (request, response) => postCandidate(request, response));
 
 // -- admin
-app.get("/setup-tables", async (request, response) => getSetupTables(response));
+app.get("/setup-tables", async (request, response) => getSetupTables(response, data));

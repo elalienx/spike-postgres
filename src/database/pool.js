@@ -1,11 +1,8 @@
 // Node modules
 import pkg from "pg";
 
-// Project files
-import credentials from "./credentials.js";
-
 // Properties
-export default async function pool(credentials = credentials) {
+export default async function pool(credentials) {
   const { Pool } = pkg;
   const pool = new Pool(credentials);
   const messages = {
@@ -27,4 +24,6 @@ export default async function pool(credentials = credentials) {
 
     throw new Error(error);
   }
+
+  return pool;
 }

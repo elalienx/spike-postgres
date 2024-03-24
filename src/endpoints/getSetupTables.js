@@ -1,16 +1,15 @@
 // Project files
-import pool from "../database/pool.js";
 import { assignments } from "../schemas/assignments.js";
 import { candidates } from "../schemas/candidates.js";
 import { errorLogs } from "../schemas/errorLogs.js";
 
-export default async function getSetupTables(response) {
+export default async function getSetupTables(response, database) {
   const message = "Postgres initialized tables";
 
   try {
-    await pool.query(assignments);
-    await pool.query(candidates);
-    await pool.query(errorLogs);
+    await database.query(assignments);
+    await database.query(candidates);
+    await database.query(errorLogs);
     response.status(200).send({ message });
   } catch (error) {
     console.error(error);
