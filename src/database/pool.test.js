@@ -13,5 +13,5 @@ test("Displays error message when the PostgressServer is down", async () => {
   const test = async () => await pool(credentials);
 
   // Assert
-  await expect(test).rejects.toThrow();
+  await expect(test).rejects.toThrow(result);
 });
