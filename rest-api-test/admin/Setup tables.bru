@@ -10,9 +10,19 @@ get {
   auth: none
 }
 
-assert {
-  res.status: eq 200
-  res.body.message: eq Postgres initialized tables
+tests {
+  test("should be able to initialize tables", function() {
+    // Arrange
+    const resultStatus = 200;
+    const resultMessage = "Postgres initialized tables";
+    
+    // Act
+    const data = res.getBody();
+    
+    // Assert
+    expect(res.getStatus()).to.equal(resultStatus);
+    expect(res.getBody().message).to.equal(resultMessage);
+  });
 }
 
 docs {
