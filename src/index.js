@@ -14,7 +14,7 @@ const app = express();
 
 // Start server
 app.use(express.json());
-app.listen(port, () => console.log(`Server started on port ${port} V2`));
+app.listen(port, () => console.info(`Express server started on port ${port}`));
 
 // Routes
 // -- assigmnents
