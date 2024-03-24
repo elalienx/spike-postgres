@@ -1,20 +1,20 @@
 // Project files
 import pool from "../database.js";
 
-export default async function postCandidate(request, response) {
+export default async function postCandidate(candidate, response) {
   const data = [
-    request.body.assignment_id,
-    request.body.linked_in_url,
-    request.body.candidate_name,
-    request.body.candidate_job_title,
-    request.body.candidate_image_url,
-    request.body.company_name,
-    request.body.company_duration_in_months,
-    request.body.company_image_url,
-    request.body.notes,
-    request.body.relevance,
-    request.body.contact_status,
-    request.body.contact_date,
+    candidate.assignment_id,
+    candidate.linked_in_url,
+    candidate.candidate_name,
+    candidate.candidate_job_title,
+    candidate.candidate_image_url,
+    candidate.company_name,
+    candidate.company_duration_in_months,
+    candidate.company_image_url,
+    candidate.notes,
+    candidate.relevance,
+    candidate.contact_status,
+    candidate.contact_date,
   ];
   const query = `INSERT INTO candidates (
         assignment_id,
