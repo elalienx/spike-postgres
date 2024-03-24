@@ -1,7 +1,7 @@
 // Project files
-import { assignments } from "../schemas/assignments.js";
-import { candidates } from "../schemas/candidates.js";
-import { errorLogs } from "../schemas/errorLogs.js";
+import { assignments } from "../schema/assignments.js";
+import { candidates } from "../schema/candidates.js";
+import { errorLogs } from "../schema/errorLogs.js";
 
 export default async function getSetupTables(response, database) {
   const message = "Postgres initialized tables";
