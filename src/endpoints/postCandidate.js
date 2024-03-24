@@ -1,5 +1,5 @@
 // Project files
-import pool from "../database.js";
+import pool from "../database/pool.js";
 
 export default async function postCandidate(candidate, response) {
   const data = [

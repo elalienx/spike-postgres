@@ -1,5 +1,5 @@
 // Project files
-import pool from "../database.js";
+import pool from "../database/pool.js";
 import { assignments } from "../schemas/assignments.js";
 import { candidates } from "../schemas/candidates.js";
 import { errorLogs } from "../schemas/errorLogs.js";

@@ -1,5 +1,5 @@
 // Project files
-import pool from "../database.js";
+import pool from "../database/pool.js";
 
 export default async function postAssignment(request, response) {
   const { assignment_name, company_name, company_image_url } = request.body;
