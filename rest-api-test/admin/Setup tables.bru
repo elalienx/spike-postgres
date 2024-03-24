@@ -9,3 +9,18 @@ get {
   body: none
   auth: none
 }
+
+assert {
+  res.status: eq 200
+  res.body.message: eq Postgres initialized tables
+}
+
+docs {
+  # Setup Tables
+  This command allows you to remotely initialize the tables neccesary to run the Scoutr project.
+  
+  These tables are:
+  1. 📂 **assignments**: To store each assignment as a separate project, each one with its own candidates.
+  1. 👨🏻 **candidates**: To store all candidates, each one with a the foreign key `assignment_id` to link it to its corresponding assignment. Note: Candidates may be stored in multiple assignments, as it is common practice to present them to multiple companies.
+  1. 📈 **error_logs**: To store information related to each time the scrapper failed to parse a candidate from the LinkedIn webpage. It stores the candidate LinkedIn profile url and a message comming from the scrapper to analyze and fix the errors.
+}
