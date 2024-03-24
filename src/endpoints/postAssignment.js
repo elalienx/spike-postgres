@@ -1,7 +1,4 @@
-// Project files
-import pool from "../database/pool.js";
-
-export default async function postAssignment(request, response) {
+export default async function postAssignment(request, response, database) {
   const { assignment_name, company_name, company_image_url } = request.body;
   const data = [assignment_name, company_name, company_image_url];
   const query = `INSERT INTO assignments (
@@ -13,7 +10,7 @@ export default async function postAssignment(request, response) {
   const message = "Postgres added new assignment";
 
   try {
-    await pool.query(query, data);
+    await database.query(query, data);
     response.status(200).send({ message });
   } catch (error) {
     console.error(error);

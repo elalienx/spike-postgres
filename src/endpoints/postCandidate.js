@@ -1,7 +1,4 @@
-// Project files
-import pool from "../database/pool.js";
-
-export default async function postCandidate(candidate, response) {
+export default async function postCandidate(candidate, response, database) {
   const data = [
     candidate.assignment_id,
     candidate.linked_in_url,
@@ -34,7 +31,7 @@ export default async function postCandidate(candidate, response) {
   const message = "Postgres added new debug candidate";
 
   try {
-    await pool.query(query, data);
+    await database.query(query, data);
     response.status(200).send({ message });
   } catch (error) {
     console.error(error);

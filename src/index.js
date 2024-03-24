@@ -12,9 +12,8 @@ import credentials from "./database/credentials.js";
 
 // Properties
 const port = 8000;
-const data = await pool(credentials);
+const database = await pool(credentials);
 const app = express();
-console.log(data);
 
 // Start server
 app.use(express.json());
@@ -22,12 +21,12 @@ app.listen(port, () => console.info(`Express server started on port ${port}`));
 
 // Routes
 // -- assigmnents
-app.get("/assignments", async (request, response) => getAssignments(response));
-app.post("/assignments", async (request, response) => postAssignment(request, response));
+app.get("/assignments", async (request, response) => getAssignments(response, database));
+app.post("/assignments", async (request, response) => postAssignment(request, response, database));
 
 // -- candidates
-app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response));
-app.post("/candidates", (request, response) => postCandidate(request, response));
+app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response, database));
+app.post("/candidates", (request, response) => postCandidate(request, response, database));
 
 // -- admin
-app.get("/setup-tables", async (request, response) => getSetupTables(response, data));
+app.get("/setup-tables", async (request, response) => getSetupTables(response, database));
