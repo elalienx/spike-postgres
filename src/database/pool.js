@@ -22,7 +22,7 @@ try {
   if (error.code === "ENOTFOUND") console.error(messages.hostError);
   if (error.code === "ECONNREFUSED") console.error(messages.portError);
   if (error.code === "3D000") console.error(messages.databaseError);
-  if (error.code === "28P01") console.error(messages.databaseError);
+  if (error.code === "28P01") console.error(messages.authError);
 
   throw new Error(error);
 }
