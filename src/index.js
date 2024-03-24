@@ -2,13 +2,13 @@
 import express from "express";
 
 // Project files
-import getAssignments from "./endpoints/getAssignments.js";
-import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.js";
-import getSetupTables from "./endpoints/getSetupTables.js";
-import postAssignment from "./endpoints/postAssignment.js";
-import postCandidate from "./endpoints/postCandidate.js";
 import pool from "./database/pool.js";
 import credentials from "./database/credentials.js";
+import initializeTables from "./database/initializeTables.js";
+import getAssignments from "./endpoints/getAssignments.js";
+import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.js";
+import postAssignment from "./endpoints/postAssignment.js";
+import postCandidate from "./endpoints/postCandidate.js";
 
 // Properties
 const port = 8000;
@@ -16,6 +16,7 @@ const database = await pool(credentials);
 const app = express();
 
 // Start server
+await initializeTables(database);
 app.use(express.json());
 app.listen(port, () => console.info(`Express server started on port ${port}`));
 
@@ -27,6 +28,3 @@ app.post("/assignments", async (request, response) => postAssignment(request, re
 // -- candidates
 app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response, database));
 app.post("/candidates", (request, response) => postCandidate(request, response, database));
-
-// -- admin
-app.get("/setup-tables", async (request, response) => getSetupTables(response, database));
