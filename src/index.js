@@ -1,5 +1,5 @@
 // Node modules
-import express, { request, response } from "express";
+import express from "express";
 
 // Project files
 import getAssignments from "./endpoints/getAssignments.js";
