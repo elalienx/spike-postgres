@@ -1,5 +1,5 @@
 export default async function postCandidate(candidate, response, database) {
-  const data = [
+  const values = [
     candidate.assignment_id,
     candidate.linked_in_url,
     candidate.candidate_name,
@@ -31,7 +31,7 @@ export default async function postCandidate(candidate, response, database) {
   const message = "Postgres added new debug candidate";
 
   try {
-    await database.query(query, data);
+    await database.query(query, values);
     response.status(200).send({ message });
   } catch (error) {
     console.error(error);
