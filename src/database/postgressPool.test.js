@@ -3,14 +3,14 @@ import { expect, test } from "vitest";
 
 // Project files
 import credentials from "./credentials";
-import pool from "./pool";
+import postgressPool from "./postgressPool";
 
-test("Displays error message when the PostgressServer is down", async () => {
+test("Displays error message when the Postgress server is down", async () => {
   // Arrange
   const result = `ENOTFOUND`;
 
   // Act
-  const test = async () => await pool(credentials);
+  const test = async () => await postgressPool(credentials);
 
   // Assert
   await expect(test).rejects.toThrow(result);

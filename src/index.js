@@ -2,7 +2,7 @@
 import express from "express";
 
 // Project files
-import database from "./database/pool.js";
+import postgressPool from "./database/postgressPool.js";
 import credentials from "./database/credentials.js";
 import getAssignments from "./endpoints/getAssignments.js";
 import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.js";
@@ -11,7 +11,7 @@ import postCandidate from "./endpoints/postCandidate.js";
 
 // Properties
 const port = 8000;
-const database = await database(credentials);
+const database = await postgressPool(credentials);
 const app = express();
 
 // Start server
