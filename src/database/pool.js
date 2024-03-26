@@ -4,9 +4,9 @@ import pkg from "pg";
 // Project files
 import initializeTables from "./initializeTables.js";
 
-export default async function pool(credentials) {
+export default async function database(credentials) {
   const { Pool } = pkg;
-  const pool = new Pool(credentials);
+  const database = new Pool(credentials);
   const messages = {
     success: `Posgress server started on port ${credentials.port}`,
     hostError: `Error: Ensure your environment has a Postgres server. If using Docker, verify that the host called ${credentials.host} matches the Docker container name of the database`,
@@ -16,8 +16,8 @@ export default async function pool(credentials) {
   };
 
   try {
-    await pool.connect();
-    await initializeTables(pool);
+    await database.connect();
+    await initializeTables(database);
 
     console.info(messages.success);
   } catch (error) {
@@ -29,5 +29,5 @@ export default async function pool(credentials) {
     throw new Error(error);
   }
 
-  return pool;
+  return database;
 }
