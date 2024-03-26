@@ -4,7 +4,6 @@ import express from "express";
 // Project files
 import pool from "./database/pool.js";
 import credentials from "./database/credentials.js";
-import initializeTables from "./database/initializeTables.js";
 import getAssignments from "./endpoints/getAssignments.js";
 import getCandidatesByAssignmentId from "./endpoints/getCandidatesByAssigmentId.js";
 import postAssignment from "./endpoints/postAssignment.js";
@@ -16,7 +15,6 @@ const database = await pool(credentials);
 const app = express();
 
 // Start server
-await initializeTables(database);
 app.use(express.json());
 app.listen(port, () => console.info(`Express server started on port ${port}`));
 

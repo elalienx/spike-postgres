@@ -1,7 +1,9 @@
 // Node modules
 import pkg from "pg";
 
-// Properties
+// Project files
+import initializeTables from "./initializeTables.js";
+
 export default async function pool(credentials) {
   const { Pool } = pkg;
   const pool = new Pool(credentials);
@@ -15,6 +17,8 @@ export default async function pool(credentials) {
 
   try {
     await pool.connect();
+    await initializeTables(pool);
+
     console.info(messages.success);
   } catch (error) {
     if (error.code === "ENOTFOUND") console.error(messages.hostError);
