@@ -20,8 +20,8 @@ app.listen(port, () => console.info(`Express server started on port ${port}`));
 
 // Routes
 // -- assigmnents
-app.get("/assignments", async (request, response) => getAssignments(response, database));
-app.post("/assignments", async (request, response) => postAssignment(request, response, database));
+app.get("/assignments", (request, response) => getAssignments(response, database));
+app.post("/assignments", (request, response) => postAssignment(request, response, database));
 
 // -- candidates
 app.get("/candidates/:assignment_id", (request, response) => getCandidatesByAssignmentId(request, response, database));
